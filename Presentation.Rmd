@@ -13,7 +13,18 @@ This is an R Markdown presentation. Markdown is a simple formatting syntax for a
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
 
+## Slide with gif
 
+![](https://media.giphy.com/media/7VzgMsB6FLCilwS30v/giphy-downsized-large.gif)
+https://media.giphy.com/media/7VzgMsB6FLCilwS30v/giphy-downsized-large.gif
+
+## Video embetting
+
+![](https://youtu.be/zNzZ1PfUDNk)
+
+## Bacon Video
+
+![](https://www.youtube.com/watch?v=Fj7HxmsN-iQ)
 
 ## Slide with Bullets
 
@@ -33,3 +44,8 @@ summary(cars)
 plot(pressure)
 ```
 
+## Thank you for attending <3
+
+![](https://media.giphy.com/media/NsBknNwmmWE8WU1q2U/giphy.gif)
+
+https://media.giphy.com/media/NsBknNwmmWE8WU1q2U/giphy.gif
