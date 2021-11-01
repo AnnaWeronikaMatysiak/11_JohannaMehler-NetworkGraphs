@@ -35,9 +35,9 @@ The material in this repository is made available under the [MIT license](http:/
 
 ## Statement of contributions 
 
-**Johanna Mehler** prepared the layout of the presentation using the Xaringan package, the explanations of basic network concepts and possible applications 
+**Johanna Mehler** prepared the layout of the presentation using the Xaringan package, the explanations of basic network concepts and possible applications. 
 
-**Ania Matysiak** prepared workflow examples of tidygraph and ggraph and their explanations, practical material for the interactive workshop part  
+**Ania Matysiak** prepared workflow examples of tidygraph and ggraph and their explanations, practical material for the interactive workshop part.  
 
  
 
