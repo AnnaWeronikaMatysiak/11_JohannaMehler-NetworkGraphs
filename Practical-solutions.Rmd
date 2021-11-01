@@ -6,7 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-## TIDY GRAPH
+## TIDY GRAPH - WORKFLOW
 **STEP 0** Download packages. Download and explore data.
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 #install.packages("tidygraph")
@@ -56,7 +56,6 @@ media_mention
 plot(media_mention)
 ```
 
-
 **EXAMPLE 2.**
 Now, please again try to join newly created two data sets. 
 HINT:You can do an operation similar to full join by using the **graph_join()** function. 
@@ -75,14 +74,14 @@ plot(media_reversed)
 ```
 
 
-## GGRAPH
+## GGRAPH - EXERCISES
 **EXAMPLE 1** Create a ggraph. Use the "news_media" data, color edges in gray, add labels and represent nodes as points
 ```{r}
 ggraph(news_media) + 
-  geom_edge_link(color="gray") + geom_node_text(aes(label = media), repel=TRUE)+ geom_node_point()
+  geom_edge_link(color="gray") + geom_node_text(aes(label = media), repel=TRUE) + geom_node_point()
 ```
 
-**EXAMPLE 2** Creat a new ggraph.Use the "news_media" data, change the color depending on type of links (edges), add labels.
+**EXAMPLE 2** Create a new ggraph. Use the "news_media" data, change the color depending on type of links (edges), add labels.
 
 ```{r}
 ggraph(news_media) + 
@@ -97,7 +96,7 @@ ggraph(news_media, layout='linear') +
 ```
 
 **CHALLENGE 1**
-Create a graph that includes also weight of the network and cotains labes of the nodes.
+Create a graph that includes also the weight of the edges and contains labels of the nodes.
 ```{r}
 ggraph(news_media) + 
   geom_edge_link(aes(alpha = weight)) + 
@@ -105,10 +104,9 @@ ggraph(news_media) +
 ```
 
 **CHALLENGE 2**
-As you already know, to measure the importance of the node in a particular network one can use centrality functions. Try to find out, which media is central. You can do it in many ways, but try to measure centrality by using the number of edges a node has.
+As you already know, to measure the importance of the nodes in a particular network one can use centrality functions. Try to find out, which media is central. You can do it in many ways, but try to measure centrality by using the number of edges a node has.
 
-HINT: We introduced you to **centrality_degree()** and **centrality_betweenness()**.
-If you finish quickly, try plotting the centrality using ggraph()
+HINT: We introduced you to **centrality_degree()** and **centrality_betweenness()**. Plot the centrality using ggraph().
 
 ```{r}
 news_media%>%  activate(nodes) %>%
@@ -123,8 +121,8 @@ news_media%>%  activate(nodes) %>%
     geom_node_point(aes(size = centrality, colour = centrality))+ geom_node_text(aes(label = media))
 ```
 
-**FOR INTERESTED**
-You can Describe what type of network your data represent, how many elements it has and add new values it it. HINT: There are functions that allow you to check those information. Eg, have a lot at **is_directed()**. More on structures, you can find here:https://michaelgastner.com/DAVisR2021/essentials-of-network-analysis.html#sec:centrality
+**FOR FURTHER INTEREST**
+You can describe what type of network your data represent, how many elements it has and add new values to it. HINT: There are functions that allow you to check this information. E.g., have a look at **is_directed()**. More on structures you can find here: https://michaelgastner.com/DAVisR2021/essentials-of-network-analysis.html#sec:centrality
 
 
 
