@@ -16,8 +16,8 @@ The workshop is intended to give a first rough impression of network theory. Mor
 
 ## Instructors
 
-- Ania Matysiak ([website](https://github.com/AnnaWeronikaMatysiak))
-- Johanna Mehler ([website](https://...))
+- Ania Matysiak ([github](https://github.com/AnnaWeronikaMatysiak))
+- Johanna Mehler ([github](https://github.com/j-mehler))
 
 
 ## Further resources
