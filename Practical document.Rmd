@@ -1,0 +1,131 @@
+---
+title: "Practical document - with responses"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## TIDY GRAPH
+**STEP 0** Download packages. Download and explore data.
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+#install.packages("tidygraph")
+#install.packages("ggraph")
+#devtools::install_github('thomasp85/ggraph') #only for newest insights, and not for today;)
+
+library(tidygraph)
+library(tidyverse)
+library(ggraph) 
+library(ggplot2)
+```
+
+```{r}
+nodes <- read.csv("https://kateto.net/workshops/data/Dataset1-Media-Example-NODES.csv", header=T, as.is=T)
+edges <- read.csv("https://kateto.net/workshops/data/Dataset1-Media-Example-EDGES.csv", header=T, as.is=T)
+
+head(nodes)
+head(edges)
+```
+SOURCE of data: https://github.com/kateto/R-igraph-Network-Workshop-NetSciX/blob/master/Dataset1-Media-Example-NODES.csv and https://www.rpubs.com/Steven_Surya/tidygraph-ggraph/
+
+**STEP 1.** Create a tbl_graph object using the above data. Print and plot it. 
+
+```{r}
+news_media<-tbl_graph(nodes,edges)
+news_media
+```
+
+```{r}
+plot(news_media)
+```
+
+**EXAMPLE 1.**
+Media outlets are linked by either "hyperlink" or "mention". Out of your combined data filter these media outlets that are link by "hyperlink" only and by "mention"s. Assign them to new data sets. Lastly, plot them. 
+
+HINT: By using **activate()** we can specify whether we would like to work on the edges or nodes.
+
+```{r}
+media_hyper<-news_media %>% activate(edges) %>% filter(type=="hyperlink")
+media_hyper
+plot(media_hyper)
+```
+
+```{r}
+media_mention <- news_media %>% activate(edges) %>% filter(type=="mention")
+media_mention
+plot(media_mention)
+```
+
+
+**EXAMPLE 2.**
+Now, please again try to join newly created two data sets. 
+HINT:You can do an operation similar to full join by using the **graph_join()** function. 
+
+```{r}
+media_mention %>% graph_join(media_hyper) %>% plot()
+```
+
+**EXAMPLE 3.**
+You are doing great! In the next step, let's change the order of our network.
+HINT: Try using **reroute()**. It takes usually two arguments, from =... and to=...
+
+```{r}
+media_reversed<-news_media %>% activate(edges)%>%reroute(from = to, to = from)
+plot(media_reversed)
+```
+
+
+## GGRAPH
+**EXAMPLE 1** Create a ggraph. Use the "news_media" data, color edges in gray, add labels and represent nodes as points
+```{r}
+ggraph(news_media) + 
+  geom_edge_link(color="gray") + geom_node_text(aes(label = media), repel=TRUE)+ geom_node_point()
+```
+
+**EXAMPLE 2** Creat a new ggraph.Use the "news_media" data, change the color depending on type of links (edges), add labels.
+
+```{r}
+ggraph(news_media) + 
+geom_edge_link(aes(color = type)) + 
+ geom_node_text(aes(label = media))
+```
+
+**EXAMPLE 3** Do you find this graph informative? If not, why? How would you improve it?
+```{r}
+ggraph(news_media, layout='linear') + 
+  geom_edge_arc(color="gray") + geom_node_text(aes(label = media), repel=TRUE)+ geom_node_point()
+```
+
+**CHALLENGE 1**
+Create a graph that includes also weight of the network and cotains labes of the nodes.
+```{r}
+ggraph(news_media) + 
+  geom_edge_link(aes(alpha = weight)) + 
+ geom_node_text(aes(label = media))
+```
+
+**CHALLENGE 2**
+As you already know, to measure the importance of the node in a particular network one can use centrality functions. Try to find out, which media is central. You can do it in many ways, but try to measure centrality by using the number of edges a node has.
+
+HINT: We introduced you to **centrality_degree()** and **centrality_betweenness()**.
+If you finish quickly, try plotting the centrality using ggraph()
+
+```{r}
+news_media%>%  activate(nodes) %>%
+  mutate(centrality = centrality_degree()) %>% arrange(centrality)
+```
+
+```{r}
+news_media%>%  activate(nodes) %>%
+  mutate(centrality = centrality_degree())%>% arrange(centrality)%>%
+    ggraph() + 
+    geom_edge_link() + 
+    geom_node_point(aes(size = centrality, colour = centrality))+ geom_node_text(aes(label = media))
+```
+
+**FOR INTERESTED**
+You can Describe what type of network your data represent, how many elements it has and add new values it it. HINT: There are functions that allow you to check those information. Eg, have a lot at **is_directed()**. More on structures, you can find here:https://michaelgastner.com/DAVisR2021/essentials-of-network-analysis.html#sec:centrality
+
+
+
+
