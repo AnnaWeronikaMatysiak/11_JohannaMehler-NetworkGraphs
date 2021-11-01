@@ -21,15 +21,15 @@ The workshop is intended to give a first rough impression of network theory. Mor
 
 
 ## Further resources
-= Package information tidygraph: https://tidygraph.data-imaginist.com/ and 
-= Package information ggraph:https://ggraph.data-imaginist.com/  
-= Functions tidygraph: https://cran.r-project.org/web/packages/tidygraph/tidygraph.pdf 
-= Functions ggraph: https://cran.r-project.org/web/packages/ggraph/ggraph.pdf 
-= Network concepts and structure: https://towardsdatascience.com/network-analysis-d734cd7270f8 
-= Network video: https://www.youtube.com/watch?v=89mxOdwPfxA 
-= Data preparation and workflow: https://www.jessesadler.com/post/network-analysis-with-r/ 
-= Applications and societal impact: https://www.cs.cornell.edu/home/kleinber/networks-book/ 
-= Applications and societal impact: http://networksciencebook.com/ 
+- Package information tidygraph: https://tidygraph.data-imaginist.com/ and 
+- Package information ggraph:https://ggraph.data-imaginist.com/  
+- Functions tidygraph: https://cran.r-project.org/web/packages/tidygraph/tidygraph.pdf 
+- Functions ggraph: https://cran.r-project.org/web/packages/ggraph/ggraph.pdf 
+- Network concepts and structure: https://towardsdatascience.com/network-analysis-d734cd7270f8 
+- Network video: https://www.youtube.com/watch?v=89mxOdwPfxA 
+- Data preparation and workflow: https://www.jessesadler.com/post/network-analysis-with-r/ 
+- Applications and societal impact: https://www.cs.cornell.edu/home/kleinber/networks-book/ 
+- Applications and societal impact: http://networksciencebook.com/ 
 
 _____________________________________________________________________________________________________________________________
 ## License 
