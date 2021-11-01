@@ -31,7 +31,7 @@ The workshop is intended to give a first rough impression of network theory. Mor
 - Applications and societal impact: https://www.cs.cornell.edu/home/kleinber/networks-book/ 
 - Applications and societal impact: http://networksciencebook.com/ 
 
-_____________________________________________________________________________________________________________________________
+
 ## License 
 
 The material in this repository is made available under the [MIT license](http://opensource.org/licenses/mit-license.php).  
