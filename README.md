@@ -26,7 +26,6 @@ The workshop is intended to give a first rough impression of network theory. Mor
 - network concepts and structure: https://towardsdatascience.com/network-analysis-d734cd7270f8 and https://www.youtube.com/watch?v=89mxOdwPfxA 
 - data preparation and workflow: https://www.jessesadler.com/post/network-analysis-with-r/ 
 - applications and societal impact: https://www.cs.cornell.edu/home/kleinber/networks-book/ and http://networksciencebook.com/ 
-- 
 
 ## License 
 
