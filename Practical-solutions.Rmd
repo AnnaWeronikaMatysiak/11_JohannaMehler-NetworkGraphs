@@ -1,5 +1,5 @@
 ---
-title: "Practical document - with responses"
+title: "Practical Solutions"
 output: html_document
 ---
 
